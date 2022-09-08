@@ -1,0 +1,275 @@
+:root {
+    --fuente: 'Open Sans', sans-serif;
+    --rojo: #d03b40;
+    --beige: #ded6c0;
+    --blanco: #f5f0ed;
+    --gris: #241d1b;
+
+    --claro: #f5f0ed;
+    --oscuro: #3c3c3b;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+*{
+  font-family: var(--fuente);
+   line-height: 1.5;
+}
+h1{
+  font-size: 28px;
+}
+h2{
+  font-size: 24px;
+}
+h3{
+  font-size: 20px;
+}
+p{
+  font-size: 16px;
+}
+.boton{
+  font-size: 14px;
+  background:none;
+  color:var(--blanco);
+  border:3px solid var(--blanco);
+  height: 50px;
+  width: 290px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.boton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.boton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.boton:hover span {
+  padding-right: 25px;
+}
+
+.boton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+hr{
+  width: 100px;
+  color:var(--blanco);
+}
+
+.Icono{
+  width: 90px;
+  margin-top:40px;
+}
+iframe{
+  width: 40%;
+  height:50%;
+  border-radius: 30% 15%;
+
+}
+.footer{
+  background-color:var(--gris);
+  color:var(--beige);
+  padding: 20px;
+  height: 100%;
+  text-align: center;
+}
+ul{
+padding: 0;
+list-style: none;
+margin: 0;
+}
+
+/*PRIMER BLOQUE*/
+.head {
+
+    background-image: url("../imagenes/Fondo1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:top;
+    text-align: center;
+    border: 0px;
+    padding: 6%;
+    min-height: auto;
+    color:var(--blanco);
+}
+.navegacion a{
+    display: block;
+    text-decoration: none;
+    color: var(--blanco);
+    border-bottom: 1px solid var(--oscuro);
+}
+
+
+.lanzador-menu{
+
+    color: var(--beige);
+    padding: 6px 1px;
+    background-color: var(--rojo);
+    float: right;
+    margin: 20px;
+    border-radius: 5%;
+}
+.lanzador-menu hr{
+
+    height: 3px;
+    background-color: var(--beige);
+    border-radius: 30%;
+    width: 30px;
+    margin: 8px;
+
+  }
+.js .navegacion{
+     max-height: 0;
+     overflow: hidden;
+     transition: max-height .5s;
+     position: absolute;
+     top: 67px;
+     left: 0px;
+     right: 0px;
+     background-color: var(--rojo);
+     font-family: var(--fuente);
+     font-size: 16px;
+     margin: 8px;
+}
+
+.js .navegacion a{
+    padding: 5px 10px;
+    color: var(--beige);
+    border-top: 1px solid rgba(255, 255, 255, .4)
+  }
+
+.js .navegacion.menu-desplegado{
+    max-height: 200px;
+}
+
+.logo{
+  position: absolute;
+  top:0;
+  left:0;
+  padding: 10px;
+  opacity: 0.8;
+}
+.enlace{
+  display: none;
+}
+
+.head h1{
+  padding:30px;
+  margin-top: 60px;
+}
+/*CUERPO*/
+.cajaRoja{
+  background-color: var(--rojo);
+  color: var(--beige);
+  text-align: center;
+  height: 240px;
+  padding: 2px;
+  display: inline-block;
+  width: 100%;
+
+}
+.cajaBeige{
+  display: inline-block;
+  background-color: var(--beige);
+  color: var(--rojo);
+  text-align: center;
+  height: 240px;
+  padding: 2px;
+  width: 100%;
+}
+
+.Fondo2 {
+
+    background-image: url("../imagenes/Fondo2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:left;
+    text-align: center;
+    border: 0px;
+    padding: 6%;
+    min-height: auto;
+    color:var(--blanco);
+
+}
+.grid-container{
+  background-color: var(--blanco);
+  text-align: center;
+  width: 100%;
+  padding-bottom: 2px;
+}
+.cajaBeige a{
+  text-decoration: none;
+  color:var(--rojo);
+  font-size: 16px;
+}
+
+.cajaRoja p, .cajaBeige p, .grid-container p{
+padding: 20px;
+  text-align: center;
+}
+
+
+/* MEDIA QUERY*/
+/*PRIMER BLOQUE*/
+@media screen and (min-width: 768px){
+
+  .enlace {
+    display:flex;
+  }
+  .enlace a{
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 14px;
+    padding-left: 16px;
+    font-weight: bold;
+  }
+  .enlace{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 40px;
+  }
+  .cajaRoja, .cajaBeige{
+    width: 50%;
+    float: left;
+  }
+  .Fondo2{
+    padding-top: 250px;
+  }
+  .grid-container{
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: auto auto auto auto;
+    padding:20px;
+  }
+
+  .Icono{
+    width: 100px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  .footer{
+    padding:50px;
+  }
+  .footer p{
+  margin-top: 220px;
+  }
+  .navegacion, .lanzador-menu{
+    display: none;
+  }
+}
