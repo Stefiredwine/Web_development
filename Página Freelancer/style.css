@@ -1,0 +1,273 @@
+/*guardar colores a utilizar*/
+:root {
+	--primero:#A55AB0 ;
+	--segundo: #711A7D;
+	--tercero: #A98BE4;
+	--cuarto: #E6E1C6;
+	--quinto:  #B09A5A;
+	/*ex color: var(--secundario)*/
+}
+*{
+  font-family: 'Urbanist', sans-serif;
+  color: var(--segundo);
+}
+/*colocar el htm y el body siempre para tamaño de letra*/
+html{
+	font-size: 62.5%;
+	/*arregla el problema de heigth y padding*/
+	box-sizing: border-box;
+	scroll-snap-type: y mandatory;
+}
+
+/*scroll snap*/
+.servicios,
+.navegacion-principal,
+.formulario {
+	scroll-snap-align:  center;
+	scroll-snap-stop: always;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+	font-size: 16px; /* 1rem= 10px */
+	background-image: linear-gradient(to top, #E6E1C6 0%, white 100%);
+}
+
+.sombra {
+	background-color: white;
+	padding: 2rem;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 1rem;
+
+}
+
+h1{
+	font-size: 3.8rem;
+}
+
+h2{
+	font-size: 2.8rem;
+}
+
+h3{
+	font-size: 1.8rem;
+}
+
+h1,h2,h3{
+	text-align: center;
+}
+
+
+span {
+	font-size: 2rem;
+}
+
+.contenedor {
+	max-width: 120rem;
+	/*margin-top: 0;
+	margin-right: auto ;
+	margin-bottom: 0;
+	margin-left: auto; 
+	ó    */
+	margin: 0 auto 0 auto;
+}
+
+.boton{
+	background-color: var(--quinto);
+	color: white;
+	padding: 1rem 3rem;
+	margin-top: 1rem;
+	font-size: 2rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-radius: .9rem;
+	width: 90%;
+	text-align: center;
+	border: none;
+	width: 100%;
+}
+
+@media (min-width:  768px){
+	.boton {
+		width: auto;
+	}
+}
+.boton:hover {
+	cursor: pointer;
+}
+
+.nav-bg {
+	background-color: var(--primero) ;
+}
+
+.navegacion-principal{
+	display: flex;
+	flex-direction: column;
+	
+}
+@media (min-width: 768px){
+    .navegacion-principal{
+	flex-direction: row;
+	justify-content: space-between;
+    }
+    .navegacion-principal a{
+    	border-radius: 12px;
+    }
+}
+
+.navegacion-principal a {
+	display: block;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	font-size: 2rem;
+	font-weight: 700;
+	padding: 1rem;
+
+} 
+/*seudoclase para que cambie de color al click*/
+.navegacion-principal a:hover {
+	background-color:var(--cuarto);
+	color: black;
+}
+
+.fondo {
+	background-image: url(Elementos/fondorosa.jpg) ;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 410px;
+	position: relative;
+	margin-bottom: 2rem;
+}
+.contenido-fondo {
+	position: absolute;
+	background-color: rgba(0,0,0,0.6);
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+.contenido-fondo h2,
+.contenido-fondo span,
+.contenido-fondo p {
+	color: white;
+}
+
+
+@media (min-width: 768px){
+
+.servicios {
+/*permite definir ubicacion y tamaño de elementos con mas control*/
+	display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    column-gap: 1rem;
+  }
+}
+
+.servicio {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+.servicio h3 {
+
+}
+.servicio .iconos{
+	height: 15rem;
+	width: 15rem;
+	background-color: var(--tercero);
+	border-radius: 50%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.formulario {
+	background-color: var(--segundo);
+	width: min(60 rem, 100%);
+	/*utilizar el valor mas pequeño entre 1 y 2*/
+	margin: 0 auto; /*utilizar cuando es formulario o cuando padre no es diaplay flex*/
+	padding: 2rem;
+	border-radius: 3rem;
+
+}
+@media (min-width:  768px){
+	.formulario{
+		margin-right: 20rem;
+		margin-left: 20rem;
+		margin-bottom: 3rem;
+	}
+}
+
+.formulario fieldset {
+	border: none;
+}
+.formulario legend {
+text-align: center;
+font-size: 1.8rem;
+text-transform: uppercase;
+font-weight: 700;
+margin-bottom: 2rem;
+color: var(--cuarto);
+}
+
+
+@media (min-width:  768px) {
+	.contenedor_campos {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: auto auto 20rem;
+		column-gap: 1rem;	
+	}
+	.campo:nth-child(3),
+	.campo:nth-child(4) {
+		grid-column: 1/3;
+
+	}
+
+}
+.campo{
+	margin-bottom: 1rem;
+
+}
+.campo label {
+	color: white;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	display: block;
+}
+
+.campo input{
+	width: 100%;
+	border: none;
+	padding: 1.5rem;
+	border-radius: 1rem;
+
+}
+
+.campo textarea{
+	height: 20rem;
+	width: 100%;
+	border-radius: 1rem;
+		padding: 3rem;
+}
+
+@media (min-width:  768px){
+	.enviar {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 3rem;	
+
+	}
+}
+.footer {
+	text-align: center;
+}
